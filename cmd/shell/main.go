@@ -4,22 +4,20 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"shhh/pkg/prompt"
 )
 
 func main() {
 	r := bufio.NewReader(os.Stdin)
-	prompt := "fancy prompt: "
 
 	for {
-		fmt.Printf(prompt)
+		fmt.Printf(prompt.Get())
 
-		raw, err := r.ReadString('\n')
+		_, err := r.ReadString('\n')
 		if err != nil {
-			fmt.Printf("An error occured while trytin to read the command: %v\n", err)
+			fmt.Printf("An error occured while trying to read the command: %v\n", err)
 			os.Exit(1)
 		}
-
-		fmt.Printf("your typed %s", raw)
 
 	}
 
