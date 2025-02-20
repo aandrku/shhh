@@ -15,3 +15,9 @@ func Get() string {
 
 	return builder.String()
 }
+
+// Get2 function returns a prompt which is displayed when user types \
+// for line continuation.
+func Get2() string {
+	return style.CYAN + ">  " + style.RESET
+}
